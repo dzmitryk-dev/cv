@@ -1,9 +1,19 @@
 <!-- Top header with photo on the right. Raw HTML <img> renders on GitHub & Pandoc. -->
-<img src="assets/avatar.webp" width="240" align="left" alt="Dzmitry Kalianchuk headshot"/>
+<!-- Top header with photo on the left, name and contact info on the right -->
+<table>
+<tr>
+<td valign="top" width="240">
+<img src="assets/avatar.webp" width="240" alt="Dzmitry Kalianchuk avatar"/>
+</td>
+<td valign="top">
 
 # Dzmitry Kalianchuk
 Lead Android Engineer · Kraków, Poland  
 [GitHub](https://github.com/dzmitryk-dev) · [LinkedIn](https://linkedin.com/in/your-profile) · dzmitry@example.com · +48 123 456 789
+
+</td>
+</tr>
+</table>
 
 ---
 
