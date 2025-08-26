@@ -3,7 +3,7 @@ set -euo pipefail
 
 IN="${1:-cv.md}"
 OUT_DIR="pdf/dist"
-OUT_PDF="$OUT_DIR/cv.pdf"
+OUT_PDF="$OUT_DIR/dzmitry_kalianchuk_android_cv.pdf"
 
 if [[ ! -f "$IN" ]]; then
   echo "ERROR: Input file '$IN' not found. Expected cv.md in repo root."
@@ -18,12 +18,12 @@ if [[ -z "${TITLE:-}" ]]; then
   TITLE="Curriculum Vitae"
 fi
 
-echo "Building PDF from: $IN"
+echo "Building A4 PDF from: $IN"
 echo "Detected title: '$TITLE'"
 echo "Output: $OUT_PDF"
 
-# Use custom margin from environment or default
-MARGIN="${MARGIN:-margin=1in}"
+# Use A4 geometry with 20mm margins
+MARGIN="${MARGIN:-a4paper,margin=20mm}"
 
 PANDOC_ARGS=(
   "--from=gfm"
@@ -35,8 +35,6 @@ PANDOC_ARGS=(
   "--output=$OUT_PDF"
   "$IN"
 )
-
-echo "Pandoc arguments: ${PANDOC_ARGS[@]}"
 
 # Warn if photo is missing (non-fatal)
 if [[ ! -f "assets/photo.jpg" && ! -f "assets/photo.png" ]]; then

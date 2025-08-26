@@ -15,13 +15,11 @@ Build your CV PDF from `cv.md` using Docker.
 ## Run locally
 
 ```bash
-./pdf/build.sh            # builds pdf/dist/cv.pdf from cv.md
+./pdf/build.sh            # builds pdf/dist/dzmitry_kalianchuk_android_cv.pdf with A4 geometry
 ./pdf/build.sh path/to/other.md
-./pdf/build-a4.sh         # builds pdf/dist/cv-A4.pdf with A4 geometry
 
 # Using Makefile shortcuts
 make pdf                  # same as ./pdf/build.sh
-make pdf-a4              # same as ./pdf/build-a4.sh
 make clean               # remove pdf/dist/
 
 # Custom margins via environment variable

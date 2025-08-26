@@ -26,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cv-pdf
-          path: pdf/dist/cv.pdf
+          path: pdf/dist/dzmitry_kalianchuk_android_cv.pdf
           if-no-files-found: error

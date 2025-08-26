@@ -9,15 +9,10 @@ clean:
 	@rm -rf pdf/dist/
 	@echo "Cleaned pdf/dist/"
 
-# A4 variant with custom geometry
-pdf-a4:
-	@./pdf/build-a4.sh
-
 # Help target
 help:
 	@echo "Available targets:"
-	@echo "  pdf      - Build CV PDF using Docker (default)"
-	@echo "  pdf-a4   - Build A4 variant with 20mm margins"
+	@echo "  pdf      - Build CV PDF with A4 geometry (default)"
 	@echo "  clean    - Remove build outputs"
 	@echo "  help     - Show this help"
 	@echo ""
