@@ -1,19 +1,11 @@
-<!-- Top header with photo on the right. Raw HTML <img> renders on GitHub & Pandoc. -->
-<!-- Top header with photo on the left, name and contact info on the right -->
-<table>
-<tr>
-<td valign="top" width="240">
-<img src="assets/avatar.webp" width="240" alt="Dzmitry Kalianchuk avatar"/>
-</td>
-<td valign="top">
+<!-- Header with photo and contact info -->
+![Dzmitry Kalianchuk avatar](assets/avatar.webp)
 
 # Dzmitry Kalianchuk
-Lead Android Engineer · Kraków, Poland  
-[GitHub](https://github.com/dzmitryk-dev) · [LinkedIn](https://linkedin.com/in/your-profile) · dzmitry@example.com · +48 123 456 789
+**Lead Android Engineer · Kraków, Poland**
 
-</td>
-</tr>
-</table>
+📧 dzmitry@example.com · 📱 +48 123 456 789  
+🔗 [GitHub](https://github.com/dzmitryk-dev) · [LinkedIn](https://linkedin.com/in/your-profile)
 
 ---
 
@@ -39,6 +31,14 @@ Android engineer with 12+ years of experience (Kotlin, Compose Multiplatform, CI
 - Mentored juniors; code reviews and unit testing culture.
 
 ## Selected Projects
+- **Flo (Trust & Security):** universal login, biometric flows, Auth0 integration.
+- **CV-as-Code:** Markdown → PDF; KMP app rendering with code-editor look.
+
+## Education
+- **Master of Computer Science**, Belarusian State University (2013)
+
+## Languages
+- English — B1+ · Polish — B1 · Russian — Native
 - **Flo (Trust & Security):** universal login, biometric flows, Auth0 integration.
 - **CV-as-Code:** Markdown → PDF; KMP app rendering with code-editor look.
 
