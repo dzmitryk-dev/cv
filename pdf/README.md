@@ -1,11 +1,11 @@
 # CV PDF Build
 
-Build your CV PDF from `cv.md` using Docker.
+Build your CV PDF from `cv.md` using Docker. All conversion logic, including image processing, runs inside the Docker container.
 
 ## Prerequisites
 
 - **Required:** Docker Desktop
-- The scripts build and use a custom Docker image with pandoc and XeLaTeX.
+- The scripts build and use a custom Docker image with pandoc, XeLaTeX, and image conversion tools.
 
 ## Setup
 
@@ -26,10 +26,17 @@ make clean               # remove pdf/dist/
 MARGIN="margin=0.5in" ./pdf/build.sh
 ```
 
+## Features
+
+- **Containerized**: All PDF generation happens inside Docker - no local dependencies needed
+- **Image conversion**: Automatically converts WebP images to JPEG for LaTeX compatibility
+- **Clean process**: No temporary files left on your system
+- **Configurable**: Override margins and other settings via environment variables
+
 ## CI
 
 GitHub Actions workflow at `.github/workflows/pdf.yml` builds on push and uploads the PDF artifact (`cv-pdf`).
 
 ## Assets
 
-Place your headshot at `assets/photo.jpg` (or `.png`). The Markdown includes it via an `<img>` tag.
+Place your headshot at `assets/photo.jpg` (or `.png`). The Markdown includes it via an `<img>` tag. WebP images are automatically converted during the build process.

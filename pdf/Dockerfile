@@ -15,5 +15,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Copy entrypoint script
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 WORKDIR /work
-ENTRYPOINT ["pandoc"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
