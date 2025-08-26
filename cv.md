@@ -4,7 +4,7 @@
 # Dzmitry Kalianchuk
 **Lead Android Engineer · Kraków, Poland**
 
-📧 dzmitry@example.com · 📱 +48 123 456 789  
+📧 dzmitry@example.com · 📱 +48 123 456 789
 🔗 [GitHub](https://github.com/dzmitryk-dev) · [LinkedIn](https://linkedin.com/in/your-profile)
 
 ---
