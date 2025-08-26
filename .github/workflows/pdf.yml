@@ -1,0 +1,30 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "cv.md"
+      - "assets/**"
+      - "pdf/**"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make build script executable
+        run: chmod +x pdf/build.sh
+
+      - name: Build PDF with Dockerized Pandoc
+        run: ./pdf/build.sh
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: pdf/dist/cv.pdf
+          if-no-files-found: error
