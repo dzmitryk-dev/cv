@@ -10,7 +10,7 @@
 ---
 
 ## Summary
-Android engineer with 12+ years of experience (Kotlin, Compose Multiplatform, CI/CD, security). Led Trust & Security streams (Auth0, biometrics), enjoy mentoring and building developer tooling. Aiming for Tech Lead path with stronger backend/cloud exposure.
+Pragmatic Software Engineer with over 10 years of experience in Android and the JVM ecosystem, driven by a passion for technology and effective problem solving. Focused on delivering simple, maintainable, and business-oriented solutions through Agile and Extreme Programming practices. Reliable team member who values trust, long-term collaboration, and steady growth of both product and people. Open-minded and ready to expand into full-stack and cloud areas, investing expertise where it creates lasting impact.
 
 ## Skills
 - Kotlin, Java; Jetpack Compose & Compose Multiplatform
