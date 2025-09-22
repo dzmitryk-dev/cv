@@ -22,29 +22,40 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 - Tools & Platforms: Gradle, GitHub Actions, GitLab CI, SonarQube, Docker
 - Team & Collaboration: Experience leading and mentoring small engineering teams; active role in technical interviewing and assessment processes; strong stakeholder communication skills
 
-## Experience
+## Responsibilities and experience
 
-### EPAM Systems — Lead Android Engineer (2021–Present)
+## Work Experience
 
-- Led Trust & Security initiatives on Flo Health.
-- Designed biometric auth & age-change flows.
-- Maintained 100+ module Gradle setup; improved CI time.
+### EPAM Systems (2015 - Present)
 
-### XYZ Startup — Senior Android Developer (2016–2019)
+Roles:
 
-- Built greenfield app with offline-first sync.
-- Introduced Compose prototypes to speed UI delivery.
-- Mentored juniors; code reviews and unit testing culture.
+- Lead Android Engineer (2021–Present)
+- Senior Software Engineer (2017-2021)
+- Software Engineer (2015-2017)
 
-## Selected Projects
+### Cactus Soft (2013 - 2014)
 
-- **Flo (Trust & Security):** universal login, biometric flows, Auth0 integration.
-- **CV-as-Code:** Markdown → PDF; KMP app rendering with code-editor look.
+Roles:
+
+- Software Engineer (2013-2014)
+
+### iTechArch (2011-2013)
+
+Roles:  
+
+- Junior Software Engineer (2011-2013)
 
 ## Education
 
-- **Master of Computer Science**, Belarusian State University (2013)
+- **BELARUSIAN STATE UNIVERSITY OF INFORMATICS AND RADIOELECTRONICS**
+
+  ***Specialist*** · Computer systems and networks · (2007 - 2012)
+
+- **BELARUSIAN STATE UNIVERSITY OF INFORMATICS AND RADIOELECTRONICS**
+
+  ***Master of Computer Science***  · Computer systems and networks · (2012 - 2014)
 
 ## Languages
 
-- English — B1+ · Polish — B1 · Belarusian — B2 · Russian — Native
+- English — B1+ · Polish — A2 · Belarusian — B2 · Russian — Native
