@@ -5,8 +5,12 @@
 
 **Lead Android Engineer · Kraków, Poland**
 
-📧 <koirn.on@gmail.com> · 📱 +48 123 456 789
-🔗 [GitHub](https://github.com/dzmitryk-dev) · [LinkedIn](https://linkedin.com/in/dzmitryk-dev)
+## Contacts
+
+- 📧 <koirn.on@gmail.com>
+- 📱 +48 123 456 789
+- 🧑‍💻 [GitHub](https://github.com/dzmitryk-dev)
+- 📃 [LinkedIn](https://linkedin.com/in/dzmitryk-dev)
 
 ---
 
