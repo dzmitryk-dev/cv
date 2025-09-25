@@ -16,11 +16,11 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 
 ## Main Skills
 
-- Programming languages: Kotlin (primary), Java, Python (scripts/automations)
-- Mobile development: Android SDK, Jetpack Compose, Jetpack Architecture Components, Coroutines & Flow, RxJava, Dagger/Hilt, Retrofit, Espresso, JUnit
-- Architecture & Practices: Clean Architecture, MVVM, MVI, modularization, CI/CD pipelines, Unit testing, UI Testing, Extreme Programming, Agile/Scrum
-- Tools & Platforms: Gradle, GitHub Actions, GitLab CI, SonarQube, Docker
-- Team & Collaboration: Experience leading and mentoring small engineering teams; active role in technical interviewing and assessment processes; strong stakeholder communication skills
+- **Programming languages**: Kotlin (primary), Java, Python (scripts/automations)
+- **Mobile development**: Android SDK, Jetpack Compose, Jetpack Architecture Components, Coroutines & Flow, RxJava, Dagger/Hilt, Retrofit, Espresso, JUnit
+- **Architecture & Practices**: Clean Architecture, MVVM, MVI, modularization, CI/CD pipelines, Unit testing, UI Testing, Extreme Programming, Agile/Scrum
+- **Tools & Platforms**: Gradle, GitHub Actions, GitLab CI, SonarQube, Docker
+- **Leadership & Collaboration**: Led teams of up to 6 engineers, mentoring, onboarding, release management, technical interviewing
 
 ## Key Achievements
 
@@ -61,13 +61,10 @@ Roles:
 
 ## Education
 
-- **BELARUSIAN STATE UNIVERSITY OF INFORMATICS AND RADIOELECTRONICS**
+- **BELARUSIAN STATE UNIVERSITY OF INFORMATICS AND RADIOELECTRONICS**, Minsk
 
-  ***Specialist*** · Computer systems and networks · (2007 - 2012)
-
-- **BELARUSIAN STATE UNIVERSITY OF INFORMATICS AND RADIOELECTRONICS**
-
-  ***Master of Computer Science***  · Computer systems and networks · (2012 - 2014)
+  - ***Specialist*** · Computer systems and networks · (2007 - 2012)
+  - ***Master of Computer Science***  · Computer systems and networks · (2012 - 2014)
 
 ## Languages
 
