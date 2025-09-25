@@ -39,33 +39,42 @@ From the engineering side, I participated in several projects worth mentioning:
 - Led modularization of an existing monolithic app into a module-based approach to create a flexible and scalable reusable solution.
 - Participated in migration to an external authentication provider (Auth0).
 
-Inside company I also:
+Internal company contribution:
 
 - Received internal certification and conducted technical interviews.
 - Acted as Assessment Committee Head for employee promotion processes.
-- Participated in internal knowledge-sharing sessions, meetups, and activities.
+- Contributes in internal knowledge-sharing sessions, meetups, and activities.
 
-## Work History
+## Work Experience
 
 ### EPAM Systems (2015 - Present)
 
 Roles:
 
 - Lead Android Engineer (2021–Present)
+  - Acted as Key Developer on a large healthcare application, focusing on secure user authentication: migrated to an external provider (Auth0), implemented biometric login, and integrated Android Credential Manager.
+  - Led a team of 3 Android engineers on a fintech project, migrating existing monolithic applications into modular, reusable components to support multiple markets and improve maintainability.
+  - Led a cross-functional squad (up to 6 engineers) on a telecom application, overseeing build processes, architecture improvements, and feature delivery.
+
 - Senior Software Engineer (2017-2021)
+  - Key Developer on a telecom application, contributing to system architecture and build infrastructure improvements. Supported modularization efforts and enhanced CI/CD pipelines to accelerate delivery.
+
 - Software Engineer (2015-2017)
+  - Key Developer on a communication platform, responsible for delivering new features, maintaining the existing codebase, and improving overall system stability.
 
 ### Cactus Soft (2013 - 2014)
 
 Roles:
 
 - Software Engineer (2013-2014)
+  - Contributed to the development of a mobile application for a leading online marketplace, implementing new functionality and maintaining the Android client.
 
 ### iTechArch (2011-2013)
 
 Roles:  
 
 - Junior Software Engineer (2011-2013)
+  - Developed Android applications for interactive location-based tours and games, delivering branded features and supporting existing functionality for both consumer and enterprise use.
 
 ## Education
 
@@ -79,4 +88,4 @@ Roles:
 
 ## Languages
 
-- English — B1+ · Polish — A2 · Belarusian — B2 · Russian — Native
+- English — Upper-Intermediate · Polish — Elementary · Belarusian — Fluent · Russian — Native
