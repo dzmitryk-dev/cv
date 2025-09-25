@@ -24,7 +24,28 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 
 ## Responsibilities and experience
 
-## Work Experience
+Participated in multiple mobile projects for major international companies, including BigTech and large enterprises, across domains such as communication, fintech, and healthcare. During this time, I played various roles: developer, key developer, and team lead.
+
+On lead positions my responsibilities included:
+
+- Leading cross-functional squads, coordinating Android, iOS, backend, QA, and product stakeholders.
+- Driving sprint planning, backlog prioritization, and task estimation to align technical solutions with business goals.
+- Supporting team members through mentorship, code reviews, and onboarding activities.
+- Serving as Release Lead, ensuring release readiness, testing coverage, and successful production deployments.
+
+From the engineering side, I participated in several projects worth mentioning:
+
+- Contributed as part of a platform team for a large multi-module, cross-country application, creating architecture and supporting build infrastructure.
+- Led modularization of an existing monolithic app into a module-based approach to create a flexible and scalable reusable solution.
+- Participated in migration to an external authentication provider (Auth0).
+
+Inside company I also:
+
+- Received internal certification and conducted technical interviews.
+- Acted as Assessment Committee Head for employee promotion processes.
+- Participated in internal knowledge-sharing sessions, meetups, and activities.
+
+## Work History
 
 ### EPAM Systems (2015 - Present)
 
