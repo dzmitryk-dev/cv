@@ -24,9 +24,9 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 
 ## Key Achievements
 
-- Transformed legacy codebases by driving modularization of large monolithic apps into scalable multi-module architectures, enabling reuse across products and faster feature delivery.
-- Improved delivery speed and reliability by optimizing CI/CD pipelines, build systems, and acting as Release Lead to ensure smooth production deployments.
-- Contributed to organizational growth by mentoring engineers, leading technical interviews, chairing promotion assessments, and sharing knowledge in internal meetups.
+- Transformed legacy codebases by modularizing monolithic apps into scalable multi-module architectures, enabling faster parallel development and easier adaptation for new markets.
+- Improved delivery speed and reliability by streamlining CI/CD pipelines and build systems, ensuring smooth and predictable production releases.
+- Contributed to organizational growth by mentoring engineers, leading technical interviews, chairing promotion assessments, and sharing knowledge in company-wide meetups.
 
 ## Work Experience
 
@@ -37,7 +37,7 @@ Roles:
 - Lead Android Engineer (2021–Present)
   - Acted as Key Developer on a large healthcare application, focusing on secure user authentication: migrated to an external provider (Auth0), implemented biometric login, and integrated Android Credential Manager.
   - Led a team of 3 Android engineers on a fintech project, migrating existing monolithic applications into modular, reusable components to support multiple markets and improve maintainability.
-  - Led a cross-functional squad (up to 6 engineers) on a telecom application, overseeing build processes, architecture improvements, and feature delivery.
+  - Managed a cross-functional squad (up to 6 engineers) on a telecom application, improving build processes and coordinating feature delivery for enterprise clients.
 
 - Senior Software Engineer (2017-2021)
   - Key Developer on a telecom application, contributing to system architecture and build infrastructure improvements. Supported modularization efforts and enhanced CI/CD pipelines to accelerate delivery.
@@ -69,6 +69,6 @@ Roles:
 ## Languages
 
 - English — Upper-Intermediate
-- Polish — Elementary
+- Polish — Basic
 - Belarusian — Fluent
 - Russian — Native
