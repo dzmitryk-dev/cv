@@ -22,28 +22,11 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 - Tools & Platforms: Gradle, GitHub Actions, GitLab CI, SonarQube, Docker
 - Team & Collaboration: Experience leading and mentoring small engineering teams; active role in technical interviewing and assessment processes; strong stakeholder communication skills
 
-## Responsibilities and experience
+## Key Achievements
 
-Participated in multiple mobile projects for major international companies, including BigTech and large enterprises, across domains such as communication, fintech, and healthcare. During this time, I played various roles: developer, key developer, and team lead.
-
-On lead positions my responsibilities included:
-
-- Leading cross-functional squads, coordinating Android, iOS, backend, QA, and product stakeholders.
-- Driving sprint planning, backlog prioritization, and task estimation to align technical solutions with business goals.
-- Supporting team members through mentorship, code reviews, and onboarding activities.
-- Serving as Release Lead, ensuring release readiness, testing coverage, and successful production deployments.
-
-From the engineering side, I participated in several projects worth mentioning:
-
-- Contributed as part of a platform team for a large multi-module, cross-country application, creating architecture and supporting build infrastructure.
-- Led modularization of an existing monolithic app into a module-based approach to create a flexible and scalable reusable solution.
-- Participated in migration to an external authentication provider (Auth0).
-
-Internal company contribution:
-
-- Received internal certification and conducted technical interviews.
-- Acted as Assessment Committee Head for employee promotion processes.
-- Contributes in internal knowledge-sharing sessions, meetups, and activities.
+- Transformed legacy codebases by driving modularization of large monolithic apps into scalable multi-module architectures, enabling reuse across products and faster feature delivery.
+- Improved delivery speed and reliability by optimizing CI/CD pipelines, build systems, and acting as Release Lead to ensure smooth production deployments.
+- Contributed to organizational growth by mentoring engineers, leading technical interviews, chairing promotion assessments, and sharing knowledge in internal meetups.
 
 ## Work Experience
 
@@ -88,4 +71,7 @@ Roles:
 
 ## Languages
 
-- English — Upper-Intermediate · Polish — Elementary · Belarusian — Fluent · Russian — Native
+- English — Upper-Intermediate
+- Polish — Elementary
+- Belarusian — Fluent
+- Russian — Native
