@@ -1,5 +1,5 @@
 <!-- Header with photo and contact info -->
-![Dzmitry Kalianchuk avatar](assets/avatar.webp)
+![Dzmitry Kalianchuk avatar](avatar.webp)
 
 # Dzmitry Kalianchuk
 
