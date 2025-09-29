@@ -1,17 +1,14 @@
-<!-- Header with photo and contact info -->
-![Dzmitry Kalianchuk avatar](avatar.webp)
-
-# Dzmitry Kalianchuk
-
-**Lead Android Engineer · Kraków, Poland**
-
-## Contacts
-
-- 📧 <koirn.on@gmail.com>
-- 📱 +48 123 456 789
-- 🧑‍💻 [GitHub](https://github.com/dzmitryk-dev)
-- 📃 [LinkedIn](https://linkedin.com/in/dzmitryk-dev)
-
+---
+title: "Dzmitry Kalianchuk — CV"
+name: "Dzmitry Kalianchuk"
+role: "Lead Android Engineer"
+location: "Kraków, Poland"
+email: "koirn.on@gmail.com"
+phone: "+48 123 456 789"
+github: "github.com/dzmitryk-dev"
+linkedin: "linkedin.com/in/dzmitryk-dev"
+date: "2025-09-29"
+avatar: "avatar.webp"
 ---
 
 ## Summary
@@ -34,41 +31,40 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 
 ## Work Experience
 
-### EPAM Systems (2015 - Present)
+### Lead Android Engineer @ EPAM Systems
+*2021 - Present*
 
-Roles:
+- Acted as Key Developer on a large healthcare application, focusing on secure user authentication: migrated to an external provider (Auth0), implemented biometric login, and integrated Android Credential Manager.
+- Led a team of 3 Android engineers on a fintech project, migrating existing monolithic applications into modular, reusable components to support multiple markets and improve maintainability.
+- Managed a cross-functional squad (up to 6 engineers) on a telecom application, improving build processes and coordinating feature delivery for enterprise clients.
 
-- Lead Android Engineer (2021–Present)
-  - Acted as Key Developer on a large healthcare application, focusing on secure user authentication: migrated to an external provider (Auth0), implemented biometric login, and integrated Android Credential Manager.
-  - Led a team of 3 Android engineers on a fintech project, migrating existing monolithic applications into modular, reusable components to support multiple markets and improve maintainability.
-  - Managed a cross-functional squad (up to 6 engineers) on a telecom application, improving build processes and coordinating feature delivery for enterprise clients.
+### Senior Software Engineer @ EPAM Systems
+*2017 - 2021*
 
-- Senior Software Engineer (2017-2021)
-  - Key Developer on a telecom application, contributing to system architecture and build infrastructure improvements. Supported modularization efforts and enhanced CI/CD pipelines to accelerate delivery.
+- Key Developer on a telecom application, contributing to system architecture and build infrastructure improvements. Supported modularization efforts and enhanced CI/CD pipelines to accelerate delivery.
 
-- Software Engineer (2015-2017)
-  - Key Developer on a communication platform, responsible for delivering new features, maintaining the existing codebase, and improving overall system stability.
+### Software Engineer @ EPAM Systems  
+*2015 - 2017*
 
-### Cactus Soft (2013 - 2014)
+- Key Developer on a communication platform, responsible for delivering new features, maintaining the existing codebase, and improving overall system stability.
 
-Roles:
+### Software Engineer @ Cactus Soft
+*2013 - 2014*
 
-- Software Engineer (2013-2014)
-  - Contributed to the development of a mobile application for a leading online marketplace, implementing new functionality and maintaining the Android client.
+- Contributed to the development of a mobile application for a leading online marketplace, implementing new functionality and maintaining the Android client.
 
-### iTechArch (2011-2013)
+### Junior Software Engineer @ iTechArch
+*2011 - 2013*
 
-Roles:  
-
-- Junior Software Engineer (2011-2013)
-  - Developed Android applications for interactive location-based tours and games, delivering branded features and supporting existing functionality for both consumer and enterprise use.
+- Developed Android applications for interactive location-based tours and games, delivering branded features and supporting existing functionality for both consumer and enterprise use.
 
 ## Education
 
-- **BELARUSIAN STATE UNIVERSITY OF INFORMATICS AND RADIOELECTRONICS**, Minsk
+### Master of Computer Science
+*Belarusian State University of Informatics and Radioelectronics, Computer systems and networks, 2012 - 2014*
 
-  - ***Specialist*** · Computer systems and networks · (2007 - 2012)
-  - ***Master of Computer Science***  · Computer systems and networks · (2012 - 2014)
+### Specialist
+*Belarusian State University of Informatics and Radioelectronics, Computer systems and networks, 2007 - 2012*
 
 ## Languages
 

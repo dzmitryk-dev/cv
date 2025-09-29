@@ -3,74 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV: [Your Name]</title>
-    <link rel="stylesheet" href="style.css">
+    <title>$title$</title>
+    <link rel="stylesheet" href="../template/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="info-panel">
-            <img src="https://via.placeholder.com/200" alt="Profile Photo" class="profile-photo">
-            <h2>John Doe</h2>
-            <p class="position">Kotlin/Android Developer</p>
+        <!-- Left info panel with personal details -->
+        <header class="info-panel">
+            <img src="../$avatar$" alt="$name$" class="profile-photo">
+            <h2>$name$</h2>
+            <p class="position">$role$</p>
             <hr>
             <div class="contact-info">
-                <p><strong>Email:</strong><br> <a href="mailto:john.doe@email.com">john.doe@email.com</a></p>
-                <p><strong>Phone:</strong><br> +48 123-456-789</p>
-                <p><strong>City:</strong><br> Krakow, Poland</p>
-                <p><strong>LinkedIn:</strong><br> <a href="#">linkedin.com/in/yourprofile</a></p>
-                <p><strong>GitHub:</strong><br> <a href="#">github.com/yourusername</a></p>
+                $if(email)$
+                <p><strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
+                $endif$
+                $if(phone)$
+                <p><strong>Phone:</strong><br> $phone$</p>
+                $endif$
+                $if(location)$
+                <p><strong>Location:</strong><br> $location$</p>
+                $endif$
+                $if(linkedin)$
+                <p><strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
+                $endif$
+                $if(github)$
+                <p><strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
+                $endif$
             </div>
-        </div>
+        </header>
 
-        <div class="editor-panel">
-            <div class="line-numbers">
-                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span>
-            </div>
+        <!-- Main content area -->
+        <main class="editor-panel">
+            <div class="line-numbers" aria-hidden="true"></div>
             <div class="cv-content">
-                <h2 class="heading">Summary</h2>
-                <p>An experienced <span class="keyword">Kotlin/Android Developer</span> with 5+ years of experience in building high-performance, scalable mobile applications. Passionate about clean architecture and creating intuitive user interfaces.</p>
-
-                <h2 class="heading">Main Skills</h2>
-                <p>
-                    <span class="skill-tag">Kotlin</span> <span class="skill-tag">Android SDK</span> <span class="skill-tag">Coroutines</span>
-                    <span class="skill-tag">Flow</span> <span class="skill-tag">Dagger/Hilt</span> <span class="skill-tag">Retrofit</span>
-                    <span class="skill-tag">Room</span> <span class="skill-tag">Jetpack Compose</span> <span class="skill-tag">MVVM/MVI</span>
-                    <span class="skill-tag">Git</span> <span class="skill-tag">CI/CD</span>
-                </p>
-
-                <h2 class="heading">Key Achievements</h2>
-                <ul>
-                    <li><span class="string">"Designed and implemented a new caching system, which boosted app performance by 30%."</span></li>
-                    <li><span class="string">"Led the project's migration to Jetpack Compose, reducing UI development time by 25%."</span></li>
-                    <li><span class="string">"Mentored two junior developers, helping them successfully integrate into the team."</span></li>
-                </ul>
-
-                <h2 class="heading">Work Experience</h2>
-                <h3 class="title">Senior Android Developer <span class="company">@ Mobile Innovations Ltd.</span></h3>
-                <p class="period">// 2021 - Present</p>
-                <ul>
-                    <li>Designing and developing key features for the company's flagship application.</li>
-                    <li>Optimizing performance and improving application stability (reducing ANRs and crashes).</li>
-                </ul>
-                <h3 class="title">Middle Android Developer <span class="company">@ App Creators</span></h3>
-                <p class="period">// 2019 - 2021</p>
-                <ul>
-                    <li>Developed new features and maintained the existing codebase.</li>
-                    <li>Participated in code reviews and team planning sessions.</li>
-                </ul>
-
-                <h2 class="heading">Education</h2>
-                <h3 class="title">B.Sc. in Computer Science</h3>
-                <p class="period">// National University of Technology, 2015 - 2019</p>
-
-                <h2 class="heading">Language Levels</h2>
-                <ul>
-                    <li><span class="property">Polish:</span> Native</li>
-                    <li><span class="property">English:</span> C1 (Advanced)</li>
-                </ul>
+                <!-- Main CV content from Markdown will be inserted here -->
+                $body$
+                
+                <!-- Optional skills list (uncomment and use in YAML if needed) -->
+                <!--
+                $if(skills)$
+                <section class="skills-section">
+                    <h2 class="heading">Skills</h2>
+                    <div class="skills-container">
+                        $for(skills)$<span class="skill-tag">$skills$</span>$endfor$
+                    </div>
+                </section>
+                $endif$
+                -->
             </div>
-        </div>
+        </main>
     </div>
+    
+    <!-- Footer with last updated date -->
+    <footer class="cv-footer">
+        $if(date)$
+        <p class="last-updated">Last updated: $date$</p>
+        $endif$
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentElement = document.querySelector('.cv-content');
+            const lineNumbersElement = document.querySelector('.line-numbers');
+            
+            if (contentElement && lineNumbersElement) {
+                const observer = new MutationObserver(() => {
+                    const computedStyle = window.getComputedStyle(contentElement);
+                    const lineHeight = parseFloat(computedStyle.lineHeight);
+                    const contentHeight = contentElement.scrollHeight;
+                    const numLines = Math.ceil(contentHeight / lineHeight);
+
+                    lineNumbersElement.innerHTML = ''; 
+
+                    for (let i = 1; i <= numLines; i++) {
+                        const span = document.createElement('span');
+                        span.textContent = i;
+                        lineNumbersElement.appendChild(span);
+                    }
+                });
+
+                observer.observe(contentElement, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true
+                });
+
+                // Initial run
+                const computedStyle = window.getComputedStyle(contentElement);
+                const lineHeight = parseFloat(computedStyle.lineHeight);
+                const contentHeight = contentElement.scrollHeight;
+                const numLines = Math.ceil(contentHeight / lineHeight);
+
+                for (let i = 1; i <= numLines; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = i;
+                    lineNumbersElement.appendChild(span);
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
