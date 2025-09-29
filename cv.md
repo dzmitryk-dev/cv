@@ -60,11 +60,10 @@ Pragmatic Software Engineer with over 10 years of experience in Android and the 
 
 ## Education
 
-### Master of Computer Science
-*Belarusian State University of Informatics and Radioelectronics, Computer systems and networks, 2012 - 2014*
+### Belarusian State University of Informatics and Radioelectronics
 
-### Specialist
-*Belarusian State University of Informatics and Radioelectronics, Computer systems and networks, 2007 - 2012*
+- *Master of Computer Science, Computer systems and networks, 2012 - 2014*
+- *Specialist, Computer systems and networks, 2007 - 2012*
 
 ## Languages
 
