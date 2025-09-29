@@ -9,59 +9,61 @@
 </head>
 <body>
     <div class="container">
-        <!-- Left info panel with personal details -->
-        <header class="info-panel">
-            <img src="../$avatar$" alt="$name$" class="profile-photo">
-            <h2>$name$</h2>
-            <p class="position">$role$</p>
-            <hr>
-            <div class="contact-info">
-                $if(email)$
-                <p><strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
-                $endif$
-                $if(phone)$
-                <p><strong>Phone:</strong><br> $phone$</p>
-                $endif$
-                $if(location)$
-                <p><strong>Location:</strong><br> $location$</p>
-                $endif$
-                $if(linkedin)$
-                <p><strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
-                $endif$
-                $if(github)$
-                <p><strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
-                $endif$
-            </div>
-        </header>
+        <div class="content-row">
+            <!-- Left info panel with personal details -->
+            <header class="info-panel">
+                <img src="../$avatar$" alt="$name$" class="profile-photo">
+                <h2>$name$</h2>
+                <p class="position">$role$</p>
+                <hr>
+                <div class="contact-info">
+                    $if(email)$
+                    <p><strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
+                    $endif$
+                    $if(phone)$
+                    <p><strong>Phone:</strong><br> $phone$</p>
+                    $endif$
+                    $if(location)$
+                    <p><strong>Location:</strong><br> $location$</p>
+                    $endif$
+                    $if(linkedin)$
+                    <p><strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
+                    $endif$
+                    $if(github)$
+                    <p><strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
+                    $endif$
+                </div>
+            </header>
 
-        <!-- Main content area -->
-        <main class="editor-panel">
-            <div class="line-numbers" aria-hidden="true"></div>
-            <div class="cv-content">
-                <!-- Main CV content from Markdown will be inserted here -->
-                $body$
-                
-                <!-- Optional skills list (uncomment and use in YAML if needed) -->
-                <!--
-                $if(skills)$
-                <section class="skills-section">
-                    <h2 class="heading">Skills</h2>
-                    <div class="skills-container">
-                        $for(skills)$<span class="skill-tag">$skills$</span>$endfor$
-                    </div>
-                </section>
-                $endif$
-                -->
-            </div>
-        </main>
+            <!-- Main content area -->
+            <main class="editor-panel">
+                <div class="line-numbers" aria-hidden="true"></div>
+                <div class="cv-content">
+                    <!-- Main CV content from Markdown will be inserted here -->
+                    $body$
+                    
+                    <!-- Optional skills list (uncomment and use in YAML if needed) -->
+                    <!--
+                    $if(skills)$
+                    <section class="skills-section">
+                        <h2 class="heading">Skills</h2>
+                        <div class="skills-container">
+                            $for(skills)$<span class="skill-tag">$skills$</span>$endfor$
+                        </div>
+                    </section>
+                    $endif$
+                    -->
+                </div>
+            </main>
+        </div>
+        
+        <!-- Footer with last updated date -->
+        <footer class="cv-footer">
+            $if(date)$
+            <p class="last-updated">Last updated: $date$</p>
+            $endif$
+        </footer>
     </div>
-    
-    <!-- Footer with last updated date -->
-    <footer class="cv-footer">
-        $if(date)$
-        <p class="last-updated">Last updated: $date$</p>
-        $endif$
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
