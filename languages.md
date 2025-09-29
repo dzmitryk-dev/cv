@@ -1,0 +1,4 @@
+- English — Upper-Intermediate
+- Polish — Basic
+- Belarusian — Fluent
+- Russian — Native

@@ -19,18 +19,10 @@
                 <p class="location">$location$</p>
                 <hr>
                 <div class="contact-info">
-                    $if(email)$
                     <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
-                    $endif$
-                    $if(phone)$
                     <p>📞 <strong>Phone:</strong><br> $phone$</p>
-                    $endif$
-                    $if(linkedin)$
                     <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
-                    $endif$
-                    $if(github)$
                     <p><i class="fab fa-github"></i> <strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
-                    $endif$
                 </div>
             </header>
 
@@ -38,29 +30,45 @@
             <main class="editor-panel">
                 <div class="line-numbers" aria-hidden="true"></div>
                 <div class="cv-content">
-                    <!-- Main CV content from Markdown will be inserted here -->
-                    $body$
+                    <!-- Summary -->
+                    <h2 class="heading">Summary</h2>
+                    <p>$summary$</p>
                     
-                    <!-- Optional skills list (uncomment and use in YAML if needed) -->
-                    <!--
-                    $if(skills)$
+                    <!-- Skills section -->
                     <section class="skills-section">
                         <h2 class="heading">Skills</h2>
-                        <div class="skills-container">
-                            $for(skills)$<span class="skill-tag">$skills$</span>$endfor$
+                        $for(skill_categories)$
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">$skill_categories.name$</h3>
+                            <div class="skills-container">
+                                $for(skill_categories.items)$<span class="skill-tag">$skill_categories.items$</span>$endfor$
+                            </div>
                         </div>
+                        $endfor$
                     </section>
-                    $endif$
-                    -->
+                    
+                    <!-- Key Achievements -->
+                    <h2 class="heading">Key Achievements</h2>
+                    $achievements$
+                    
+                    <!-- Work Experience -->
+                    <h2 class="heading">Work Experience</h2>
+                    $experience$
+                    
+                    <!-- Education -->
+                    <h2 class="heading">Education</h2>
+                    $education$
+                    
+                    <!-- Languages -->
+                    <h2 class="heading">Languages</h2>
+                    $languages$
                 </div>
             </main>
         </div>
         
         <!-- Footer with last updated date -->
         <footer class="cv-footer">
-            $if(date)$
             <p class="last-updated">Last updated: $date$</p>
-            $endif$
         </footer>
     </div>
 
