@@ -68,7 +68,7 @@ body {
 
 .info-panel h2 { margin: 0 0 5px 0; color: var(--text-color); font-size: 20px; }
 .info-panel .position { color: var(--keyword-color); font-size: 14px; margin-top: 0; }
-.info-panel .location { color: var(--keyword-color); font-size: 14px; margin: 5px 0 0 0; }
+.info-panel .location { color: white; font-size: 14px; margin: 5px 0 0 0; }
 .info-panel hr { width: 100%; border: 0; border-top: 1px solid #444; margin: 15px 0; }
 .contact-info { text-align: left; width: 100%; }
 .contact-info p { margin: 12px 0; font-size: 12px; }
