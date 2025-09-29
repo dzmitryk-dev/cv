@@ -248,130 +248,21 @@ body {
     background-color: #3d3d3d;
 }
 
-/* Print styles for A4 format */
+/* Minimal print styles to preserve backgrounds */
 @media print {
-    @page {
-        size: A4;
-        margin: 12mm;
-    }
-    
     body {
-        background: white !important;
-        color: #333 !important;
-        font-size: 11pt;
-        line-height: 1.4;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
     
-    .container {
-        display: block !important;
-        background: white !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
-        max-width: none !important;
-    }
-    
-    .info-panel {
-        background: white !important;
-        border-right: 2px solid #333 !important;
-        padding: 15mm !important;
-        margin-bottom: 5mm;
-        page-break-inside: avoid;
-        width: 100% !important;
-        flex: none !important;
-    }
-    
-    .editor-panel {
-        background: white !important;
-        flex: none !important;
-        display: block !important;
-    }
-    
-    .line-numbers {
-        display: none !important;
-    }
-    
-    .cv-content {
-        padding: 0 !important;
-        color: #333 !important;
-    }
-    
-    .cv-footer {
-        background: white !important;
-        border-top: 1px solid #333 !important;
-        color: #666 !important;
-        page-break-inside: avoid;
-        margin-top: 5mm;
-    }
-    
-    /* Print-friendly colors */
-    .cv-content .heading {
-        color: #1a5490 !important;
-    }
-    
-    .cv-content .title {
-        color: #2d5aa0 !important;
-    }
-    
-    .cv-content .company {
-        color: #1a5490 !important;
-    }
-    
-    .cv-content .period {
-        color: #666 !important;
-    }
-    
-    .cv-content .keyword {
-        color: #1a5490 !important;
-    }
-    
-    .cv-content .string {
-        color: #8b4513 !important;
-    }
-    
-    .cv-content .property {
-        color: #b8860b !important;
-    }
-    
+    .container,
+    .info-panel,
+    .editor-panel,
+    .cv-content,
     .skill-tag {
-        background: #f0f0f0 !important;
-        border: 1px solid #ccc !important;
-        color: #333 !important;
-        font-size: 10pt !important;
-        margin: 2px !important;
-        padding: 3px 6px !important;
-    }
-    
-    .skills-container {
-        gap: 4px !important;
-    }
-    
-    .skill-category-title {
-        color: #2d5aa0 !important;
-        font-size: 11pt !important;
-    }
-    
-    .contact-info a {
-        color: inherit !important;
-        text-decoration: none !important;
-    }
-    
-    .profile-photo {
-        border-color: #333 !important;
-    }
-    
-    /* Ensure good page breaks */
-    h2.heading {
-        page-break-after: avoid;
-    }
-    
-    h3.title {
-        page-break-after: avoid;
-    }
-    
-    ul, ol {
-        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 }
