@@ -6,6 +6,7 @@
     <title>$title$</title>
     <link rel="stylesheet" href="../template/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -15,22 +16,20 @@
                 <img src="../$avatar$" alt="$name$" class="profile-photo">
                 <h2>$name$</h2>
                 <p class="position">$role$</p>
+                <p class="location">$location$</p>
                 <hr>
                 <div class="contact-info">
                     $if(email)$
-                    <p><strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
                     $endif$
                     $if(phone)$
-                    <p><strong>Phone:</strong><br> $phone$</p>
-                    $endif$
-                    $if(location)$
-                    <p><strong>Location:</strong><br> $location$</p>
+                    <p>📞 <strong>Phone:</strong><br> $phone$</p>
                     $endif$
                     $if(linkedin)$
-                    <p><strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
+                    <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
                     $endif$
                     $if(github)$
-                    <p><strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
+                    <p><i class="fab fa-github"></i> <strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
                     $endif$
                 </div>
             </header>
