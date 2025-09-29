@@ -70,10 +70,15 @@
             
             if (contentElement && lineNumbersElement) {
                 const observer = new MutationObserver(() => {
+                    const editorPanel = document.querySelector('.editor-panel');
                     const computedStyle = window.getComputedStyle(contentElement);
                     const lineHeight = parseFloat(computedStyle.lineHeight);
+                    
+                    // Use the larger of content height or editor panel height
                     const contentHeight = contentElement.scrollHeight;
-                    const numLines = Math.ceil(contentHeight / lineHeight);
+                    const panelHeight = editorPanel.clientHeight;
+                    const targetHeight = Math.max(contentHeight, panelHeight);
+                    const numLines = Math.ceil(targetHeight / lineHeight) + 10;
 
                     lineNumbersElement.innerHTML = ''; 
 
@@ -90,11 +95,16 @@
                     characterData: true
                 });
 
-                // Initial run
+                // Initial run - calculate based on editor panel height, not just content
+                const editorPanel = document.querySelector('.editor-panel');
                 const computedStyle = window.getComputedStyle(contentElement);
                 const lineHeight = parseFloat(computedStyle.lineHeight);
+                
+                // Use the larger of content height or editor panel height
                 const contentHeight = contentElement.scrollHeight;
-                const numLines = Math.ceil(contentHeight / lineHeight);
+                const panelHeight = editorPanel.clientHeight;
+                const targetHeight = Math.max(contentHeight, panelHeight);
+                const numLines = Math.ceil(targetHeight / lineHeight) + 5; // Add extra lines
 
                 for (let i = 1; i <= numLines; i++) {
                     const span = document.createElement('span');

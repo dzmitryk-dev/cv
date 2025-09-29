@@ -19,6 +19,7 @@ body {
     color: var(--text-color);
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -77,21 +78,28 @@ body {
     display: flex;
     background-color: var(--editor-bg);
     overflow-y: auto;
+    height: 100%; /* Ensure full height */
 }
 
 .line-numbers {
     background-color: var(--editor-bg);
-    padding: 20px 15px;
+    padding: 20px 10px;
     text-align: right;
     color: var(--line-number-color);
     font-size: 14px;
     user-select: none;
     border-right: 1px solid #333;
+    flex-shrink: 0;
+    width: 45px; /* Reduced width for line numbers */
+    display: flex;
+    flex-direction: column;
+    align-self: stretch; /* Take full height of parent */
 }
 
 .line-numbers span { 
     display: block; 
-    line-height: 1.6; 
+    line-height: 1.6;
+    flex: none; /* Don't grow or shrink individual numbers */
 }
 
 /* CV Content Styling */
@@ -169,21 +177,6 @@ body {
 
 
 
-/* Simple line number styling - back to the original working approach */
-.line-numbers {
-    background-color: var(--editor-bg);
-    padding: 20px 15px;
-    text-align: right;
-    color: var(--line-number-color);
-    font-size: 14px;
-    user-select: none;
-    border-right: 1px solid #333;
-}
-
-.line-numbers span { 
-    display: block; 
-    line-height: 1.6; 
-}
 
 /* Footer styling */
 .cv-footer {
@@ -193,14 +186,15 @@ body {
     border-top: 1px solid #3c3c3c;
     font-size: 12px;
     color: var(--line-number-color);
+    margin-top: auto; /* Push footer to bottom */
+    width: 100%;
+    max-width: 1200px;
 }
 
 .last-updated {
     margin: 0;
     font-style: italic;
 }
-
-
 
 /* Skills section styling (for optional use) */
 .skills-section {
