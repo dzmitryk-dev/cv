@@ -1,0 +1,164 @@
+/* VS Code Dark Theme Color Palette */
+:root {
+    --editor-bg: #1E1E1E;
+    --side-panel-bg: #252526;
+    --text-color: #D4D4D4;
+    --line-number-color: #858585;
+    --keyword-color: #569CD6; /* Blue for keywords like job titles */
+    --class-name-color: #4EC9B0; /* Teal for headings */
+    --variable-color: #9CDCFE; /* Light blue for job titles */
+    --string-color: #CE9178; /* Orange for strings/achievements */
+    --comment-color: #6A9955; /* Green for comments/dates */
+    --property-color: #D7BA7D; /* Yellow for language labels */
+    --link-color: #3794FF;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #333;
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    min-height: 700px;
+    background-color: var(--editor-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Left Panel - Info */
+.info-panel {
+    flex: 1;
+    background-color: var(--side-panel-bg);
+    padding: 30px;
+    border-right: 1px solid #3c3c3c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--text-color);
+    object-fit: cover;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.info-panel h2 { margin: 0 0 5px 0; color: var(--text-color); font-size: 24px; }
+.info-panel .position { color: var(--keyword-color); font-size: 16px; margin-top: 0; }
+.info-panel hr { width: 100%; border: 0; border-top: 1px solid #444; margin: 20px 0; }
+.contact-info { text-align: left; width: 100%; }
+.contact-info p { margin: 15px 0; font-size: 14px; }
+.contact-info strong { color: var(--class-name-color); }
+.contact-info a { color: var(--link-color); text-decoration: none; word-break: break-all; }
+.contact-info a:hover { text-decoration: underline; }
+
+/* Right Panel - CV Editor */
+.editor-panel {
+    flex: 2.2; /* Making the content panel a bit wider */
+    display: flex;
+    background-color: var(--editor-bg);
+    overflow-y: auto;
+}
+
+.line-numbers {
+    background-color: var(--editor-bg);
+    padding: 20px 15px;
+    text-align: right;
+    color: var(--line-number-color);
+    font-size: 14px;
+    user-select: none;
+    border-right: 1px solid #333;
+}
+
+.line-numbers span { display: block; line-height: 1.6; }
+
+/* CV Content Styling */
+.cv-content {
+    padding: 20px 25px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.cv-content .heading {
+    color: var(--class-name-color);
+    font-size: 20px;
+    margin: 25px 0 10px 0;
+    font-weight: 500;
+}
+.cv-content .heading:first-child { margin-top: 0; }
+
+.cv-content .title {
+    color: var(--variable-color);
+    font-size: 16px;
+    margin: 15px 0 0 0;
+    font-weight: 500;
+}
+
+.cv-content .company {
+    color: var(--keyword-color);
+}
+
+.cv-content .period {
+    color: var(--comment-color);
+    margin: 0 0 10px 0;
+    font-style: italic;
+}
+
+.cv-content p {
+    margin: 0 0 10px 0;
+}
+
+.cv-content ul {
+    list-style-type: none;
+    padding-left: 15px;
+    margin: 0 0 15px 0;
+}
+
+.cv-content li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+/* List bullet styling */
+.cv-content li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--keyword-color);
+    font-weight: bold;
+}
+
+.cv-content .skill-tag {
+    display: inline-block;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    color: var(--string-color);
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin: 3px;
+    font-size: 14px;
+}
+
+/* Colors for individual span elements */
+.cv-content .keyword { color: var(--keyword-color); }
+.cv-content .string { color: var(--string-color); }
+.cv-content .property { color: var(--property-color); }
