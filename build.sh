@@ -21,6 +21,15 @@ pandoc meta.yml contacts.yml skills.yml \
 echo "✅ CV built successfully at dist/cv.html"
 echo "📅 Generated with date: $CURRENT_DATE"
 
+# Generate PDF with Puppeteer (preserves all backgrounds and styling)
+if command -v node >/dev/null 2>&1; then
+    echo "🎨 Generating PDF with preserved backgrounds..."
+    node generate-pdf.js
+else
+    echo "⚠️  Node.js not found. Skipping PDF generation."
+    echo "   Install Node.js to enable PDF generation with preserved styling."
+fi
+
 # Optional: Open the result
 if [[ "$1" == "--open" ]]; then
     open dist/cv.html
