@@ -69,48 +69,31 @@
             const lineNumbersElement = document.querySelector('.line-numbers');
             
             if (contentElement && lineNumbersElement) {
-                const observer = new MutationObserver(() => {
-                    const editorPanel = document.querySelector('.editor-panel');
+                function generateLineNumbers() {
                     const computedStyle = window.getComputedStyle(contentElement);
                     const lineHeight = parseFloat(computedStyle.lineHeight);
+                    const editorPanel = document.querySelector('.editor-panel');
                     
-                    // Use the larger of content height or editor panel height
-                    const contentHeight = contentElement.scrollHeight;
+                    // Since container grows with content, use editor panel height
                     const panelHeight = editorPanel.clientHeight;
-                    const targetHeight = Math.max(contentHeight, panelHeight);
-                    const numLines = Math.ceil(targetHeight / lineHeight) + 10;
+                    const lineNumbersPadding = 40; // 20px top + 20px bottom
+                    const availableHeight = panelHeight - lineNumbersPadding;
+                    const numLines = Math.ceil(availableHeight / lineHeight) + 5; // Add buffer
 
-                    lineNumbersElement.innerHTML = ''; 
+                    lineNumbersElement.innerHTML = '';
 
                     for (let i = 1; i <= numLines; i++) {
                         const span = document.createElement('span');
                         span.textContent = i;
                         lineNumbersElement.appendChild(span);
                     }
-                });
-
-                observer.observe(contentElement, {
-                    childList: true,
-                    subtree: true,
-                    characterData: true
-                });
-
-                // Initial run - calculate based on editor panel height, not just content
-                const editorPanel = document.querySelector('.editor-panel');
-                const computedStyle = window.getComputedStyle(contentElement);
-                const lineHeight = parseFloat(computedStyle.lineHeight);
-                
-                // Use the larger of content height or editor panel height
-                const contentHeight = contentElement.scrollHeight;
-                const panelHeight = editorPanel.clientHeight;
-                const targetHeight = Math.max(contentHeight, panelHeight);
-                const numLines = Math.ceil(targetHeight / lineHeight) + 5; // Add extra lines
-
-                for (let i = 1; i <= numLines; i++) {
-                    const span = document.createElement('span');
-                    span.textContent = i;
-                    lineNumbersElement.appendChild(span);
                 }
+
+                // Generate line numbers after content is loaded and rendered
+                setTimeout(generateLineNumbers, 100);
+                
+                // Also regenerate on window resize
+                window.addEventListener('resize', generateLineNumbers);
             }
         });
     </script>
