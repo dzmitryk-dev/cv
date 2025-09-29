@@ -74,13 +74,12 @@
                 function generateLineNumbers() {
                     const computedStyle = window.getComputedStyle(contentElement);
                     const lineHeight = parseFloat(computedStyle.lineHeight);
-                    const editorPanel = document.querySelector('.editor-panel');
                     
-                    // Since container grows with content, use editor panel height
-                    const panelHeight = editorPanel.clientHeight;
-                    const lineNumbersPadding = 40; // 20px top + 20px bottom
-                    const availableHeight = panelHeight - lineNumbersPadding;
-                    const numLines = Math.ceil(availableHeight / lineHeight) + 5; // Add buffer
+                    // Use cv-content height instead of editor panel to match content
+                    const contentHeight = contentElement.clientHeight;
+                    const lineNumbersPadding = 30; // 15px top + 15px bottom
+                    const availableHeight = contentHeight - lineNumbersPadding;
+                    const numLines = Math.ceil(availableHeight / lineHeight) + 2; // Add small buffer
 
                     lineNumbersElement.innerHTML = '';
 
