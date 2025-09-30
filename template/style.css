@@ -18,23 +18,117 @@ body {
     background-color: #333;
     color: var(--text-color);
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 0;
     box-sizing: border-box;
+    /* PDF-friendly: Remove centering and padding to fill page properly */
+}
+
+/* Print-specific styles for PDF generation */
+@media print {
+    body {
+        background-color: var(--editor-bg);
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Define page margins that apply to all pages */
+    @page {
+        size: A4;
+        margin: 0; /* Let Puppeteer handle the margins */
+    }
+    
+    /* Page break controls */
+    .heading {
+        page-break-after: avoid;
+        break-after: avoid;
+        margin-top: 20px !important;
+        padding-top: 5px; /* Add consistent top padding */
+    }
+    
+    .skill-category,
+    .info-panel p,
+    .cv-content p,
+    .cv-content ul {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Ensure sections don't break awkwardly */
+    .skills-section,
+    .contact-info {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Keep related content together */
+    .skill-category-title + .skills-container {
+        page-break-before: avoid;
+        break-before: avoid;
+    }
+    
+    /* Prevent orphaned headings and improve list handling */
+    h2, h3 {
+        page-break-after: avoid;
+        break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        padding-top: 3px; /* Small consistent top padding */
+    }
+    
+    /* Better list handling for PDF */
+    ul {
+        orphans: 2;
+        widows: 2;
+    }
+    
+    /* Adjust spacing for print with consistent margins */
+    .cv-content .heading {
+        margin-top: 20px;
+        margin-bottom: 8px;
+        padding-top: 5px;
+    }
+    
+    .cv-content .heading:first-child {
+        margin-top: 10px;
+        padding-top: 0;
+    }
+    
+    /* Ensure consistent spacing for content that starts a new page */
+    .cv-content > section,
+    .cv-content > div,
+    .cv-content > p {
+        margin-block-start: 0;
+        padding-block-start: 0;
+    }
+    
+    /* Optimize footer for PDF */
+    .cv-footer {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-top: auto;
+        padding-bottom: 5px;
+    }
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    width: 210mm;
-    /* height: 297mm; */ /* Removed to allow container to grow with content */
+    width: 100%;
+    min-height: 100vh;
     background-color: var(--editor-bg);
-    border-radius: 8px;
-    overflow: hidden;
     box-sizing: border-box;
+    /* PDF-friendly: Full width and height to utilize all available space */
+}
+
+/* Print-specific container adjustments */
+@media print {
+    .container {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        border-radius: 0;
+        overflow: visible;
+    }
 }
 
 .content-row {
@@ -54,6 +148,13 @@ body {
     align-items: center;
     text-align: center;
     align-self: stretch; /* Stretch to match editor panel height */
+}
+
+@media print {
+    .info-panel {
+        padding: 15px;
+        /* Optimize padding for PDF */
+    }
 }
 
 .profile-photo {
@@ -119,6 +220,13 @@ body {
     margin-left: 55px; /* Account for line numbers (40px + 15px padding) */
 }
 
+@media print {
+    .cv-content {
+        padding: 10px 15px;
+        /* Reduce padding for PDF to use more space */
+    }
+}
+
 .cv-content .heading {
     color: var(--class-name-color);
     font-size: 16px;
@@ -131,6 +239,14 @@ body {
     color: var(--variable-color);
     font-size: 13px;
     margin: 12px 0 0 0;
+    font-weight: 500;
+}
+
+/* Style job titles in work experience section to match skill categories */
+.cv-content h3 {
+    color: var(--variable-color);
+    font-size: 13px;
+    margin: 12px 0 5px 0;
     font-weight: 500;
 }
 
@@ -215,6 +331,7 @@ body {
 
 .skill-category {
     margin: 15px 0;
+    page-break-inside: avoid; /* Prevent breaking skill categories */
 }
 
 .skill-category-title {
