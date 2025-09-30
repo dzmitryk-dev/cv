@@ -57,8 +57,8 @@ jobs:
           exit 1
         fi
         
-        if [ ! -f "dist/cv.pdf" ]; then
-          echo "❌ Error: cv.pdf not found"
+        if [ ! -f "dist/dzmitry_kalianchuk_cv.pdf" ]; then
+          echo "❌ Error: dzmitry_kalianchuk_cv.pdf not found"
           exit 1
         fi
         
@@ -68,7 +68,7 @@ jobs:
       run: |
         echo "Generated files:"
         echo "HTML: $(ls -lh dist/cv.html | awk '{print $5}')"
-        echo "PDF: $(ls -lh dist/cv.pdf | awk '{print $5}')"
+        echo "PDF: $(ls -lh dist/dzmitry_kalianchuk_cv.pdf | awk '{print $5}')"
         
     - name: Prepare release assets
       run: |
@@ -77,11 +77,12 @@ jobs:
         
         # Copy files with descriptive names
         cp dist/cv.html "release/CV-$(date +%Y%m%d).html"
-        cp dist/cv.pdf "release/CV-$(date +%Y%m%d).pdf"
+        cp dist/dzmitry_kalianchuk_cv.pdf "release/CV-$(date +%Y%m%d).pdf"
         
         # Also keep original names for consistency
         cp dist/cv.html release/
-        cp dist/cv.pdf release/
+        cp dist/dzmitry_kalianchuk_cv.pdf release/cv.pdf
+        cp dist/dzmitry_kalianchuk_cv.pdf release/dzmitry_kalianchuk_cv.pdf
         
         echo "Release assets prepared:"
         ls -la release/
@@ -142,25 +143,7 @@ jobs:
         draft: false
         prerelease: ${{ steps.release_info.outputs.prerelease }}
         body: |
-          ## CV Files Generated 📄
-          
-          This release contains the latest version of the CV in both HTML and PDF formats.
-          
-          ### 📁 Files Included:
-          - **CV.pdf** - PDF version with preserved styling and backgrounds
-          - **CV.html** - Web version for online viewing
-          - **CV-YYYYMMDD.pdf** - Dated PDF version
-          - **CV-YYYYMMDD.html** - Dated HTML version
-          
-          ### 🎨 Features:
-          - Professional VS Code dark theme aesthetic
-          - Print-optimized A4 formatting
-          - Background colors and styling preserved in PDF
-          - Responsive design for all devices
-          
-          ### 🔄 Generated on: $(date)
-          
-          Generated automatically from the latest CV content using GitHub Actions.
+          CV generated on: $(date +"%Y-%m-%d %H:%M:%S UTC")
           
     - name: Upload PDF Release Asset
       uses: actions/upload-release-asset@v1
@@ -168,46 +151,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/cv.pdf
-        asset_name: CV.pdf
+        asset_path: ./dist/dzmitry_kalianchuk_cv.pdf
+        asset_name: dzmitry_kalianchuk_cv.pdf
         asset_content_type: application/pdf
-        
-    - name: Upload HTML Release Asset  
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/cv.html
-        asset_name: CV.html
-        asset_content_type: text/html
-        
-    - name: Upload Dated PDF Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./release/CV-$(date +%Y%m%d).pdf
-        asset_name: CV-$(date +%Y%m%d).pdf
-        asset_content_type: application/pdf
-        
-    - name: Upload Dated HTML Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./release/CV-$(date +%Y%m%d).html
-        asset_name: CV-$(date +%Y%m%d).html
-        asset_content_type: text/html
         
     - name: Display release info
       run: |
         echo "🎉 Release created successfully!"
         echo "📎 Release URL: ${{ steps.create_release.outputs.html_url }}"
-        echo "🔗 You can download the CV files from the release page"
+        echo "🔗 You can download the CV from the release page"
         echo ""
-        echo "📁 Direct download links:"
-        echo "  PDF: ${{ steps.create_release.outputs.html_url }}/download/CV.pdf"
-        echo "  HTML: ${{ steps.create_release.outputs.html_url }}/download/CV.html"
+        echo "📁 Direct download link:"
+        echo "  PDF: ${{ steps.create_release.outputs.html_url }}/download/dzmitry_kalianchuk_cv.pdf"

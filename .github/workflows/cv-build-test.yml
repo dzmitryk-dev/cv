@@ -50,7 +50,7 @@ jobs:
         echo "📊 Generated file information:"
         
         HTML_SIZE=$(stat -c%s "dist/cv.html")
-        PDF_SIZE=$(stat -c%s "dist/cv.pdf")
+        PDF_SIZE=$(stat -c%s "dist/dzmitry_kalianchuk_cv.pdf")
         
         echo "HTML size: $(numfmt --to=iec $HTML_SIZE) ($HTML_SIZE bytes)"
         echo "PDF size: $(numfmt --to=iec $PDF_SIZE) ($PDF_SIZE bytes)"
@@ -74,7 +74,7 @@ jobs:
         name: cv-build-test
         path: |
           dist/cv.html
-          dist/cv.pdf
+          dist/dzmitry_kalianchuk_cv.pdf
         retention-days: 7
         
     - name: Display success message
