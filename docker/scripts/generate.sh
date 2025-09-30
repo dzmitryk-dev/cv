@@ -45,8 +45,8 @@ else
   echo "   ❌ cv.html (Failed to generate)"
 fi
 
-if [ -f "./dist/cv.pdf" ]; then
-  echo "   ✅ cv.pdf (PDF with preserved styling)"
+if [ -f "./dist/dzmitry_kalianchuk_cv.pdf" ]; then
+  echo "   ✅ dzmitry_kalianchuk_cv.pdf (PDF with preserved styling)"
 else
-  echo "   ❌ cv.pdf (Failed to generate)"
+  echo "   ❌ dzmitry_kalianchuk_cv.pdf (Failed to generate)"
 fi

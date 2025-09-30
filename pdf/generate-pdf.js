@@ -31,7 +31,7 @@ async function generatePDF() {
 
         // Path to the generated HTML file
         const htmlPath = path.join(__dirname, '..', 'dist', 'cv.html');
-        const outputPath = path.join(__dirname, '..', 'dist', 'cv.pdf');
+        const outputPath = path.join(__dirname, '..', 'dist', 'dzmitry_kalianchuk_cv.pdf');
 
         // Check if HTML file exists
         if (!fs.existsSync(htmlPath)) {
