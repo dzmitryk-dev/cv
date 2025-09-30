@@ -54,15 +54,15 @@ async function generatePDF() {
 
         console.log('🎨 Generating PDF with preserved backgrounds and styling...');
 
-        // Generate PDF with all backgrounds preserved
+        // Generate PDF with optimized margins and CSS page control
         await page.pdf({
             path: outputPath,
             format: 'A4',
             margin: {
-                top: '12mm',
-                right: '12mm',
-                bottom: '12mm',
-                left: '12mm'
+                top: '10mm',
+                right: '10mm',
+                bottom: '10mm',
+                left: '10mm'
             },
             printBackground: true, // This is the key setting!
             preferCSSPageSize: false,
