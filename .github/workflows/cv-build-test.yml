@@ -1,0 +1,72 @@
+name: Build and Test CV
+
+on:
+  # Trigger on pull requests
+  pull_request:
+    branches: [ main, master ]
+
+  # Trigger on pushes to main/master (without creating release)
+  push:
+    branches: [ main, master ]
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Make scripts executable
+      run: |
+        chmod +x build_html.sh
+        chmod +x docker/scripts/build.sh
+        chmod +x docker/scripts/generate.sh
+        
+    - name: Build Docker image
+      run: |
+        echo "🔄 Building Docker image..."
+        make image
+        
+    - name: Test CV generation using Docker
+      run: |
+        echo "🔄 Testing CV generation with Docker..."
+        make pdf
+        
+    - name: Validate file sizes
+      run: |
+        echo "📊 Generated file information:"
+        
+        HTML_SIZE=$(stat -c%s "dist/cv.html")
+        PDF_SIZE=$(stat -c%s "dist/dzmitry_kalianchuk_cv.pdf")
+        
+        echo "HTML size: $(numfmt --to=iec $HTML_SIZE) ($HTML_SIZE bytes)"
+        echo "PDF size: $(numfmt --to=iec $PDF_SIZE) ($PDF_SIZE bytes)"
+        
+        # Basic validation - files should be larger than 1KB
+        if [ $HTML_SIZE -lt 1024 ]; then
+          echo "❌ Warning: HTML file seems too small"
+          exit 1
+        fi
+        
+        if [ $PDF_SIZE -lt 5120 ]; then
+          echo "❌ Warning: PDF file seems too small"
+          exit 1
+        fi
+        
+        echo "✅ File sizes look good"
+        
+    - name: Upload build artifacts (for review)
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-build-test
+        path: |
+          dist/cv.html
+          dist/dzmitry_kalianchuk_cv.pdf
+        retention-days: 7
+        
+    - name: Display success message
+      run: |
+        echo "🎉 CV build and test completed successfully!"
+        echo "📁 Generated files are available as artifacts"
+        echo "🔍 You can download them from the Actions run page to review"

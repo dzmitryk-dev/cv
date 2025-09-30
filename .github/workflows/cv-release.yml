@@ -1,0 +1,165 @@
+name: Generate CV and Create Release
+
+on:
+  # Trigger on git tags (for versioned releases)
+  push:
+    tags:
+      - 'v*'
+      - 'release-*'
+  
+  # Manual trigger from GitHub UI
+  workflow_dispatch:
+    inputs:
+      release_name:
+        description: 'Release name (optional)'
+        required: false
+        default: ''
+      prerelease:
+        description: 'Mark as pre-release'
+        required: false
+        default: false
+        type: boolean
+
+  # Trigger on changes to CV content (optional - uncomment if desired)
+  # push:
+  #   branches: [ main, master ]
+  #   paths:
+  #     - 'content/**'
+  #     - 'template/**'
+
+jobs:
+  generate-cv:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Make scripts executable
+      run: |
+        chmod +x build_html.sh
+        chmod +x docker/scripts/build.sh
+        chmod +x docker/scripts/generate.sh
+        
+    - name: Build Docker image
+      run: make image
+      
+    - name: Generate CV using Docker
+      run: make pdf
+      
+    - name: Verify generated files
+      run: |
+        echo "Checking generated files..."
+        ls -la dist/
+        
+        if [ ! -f "dist/cv.html" ]; then
+          echo "❌ Error: cv.html not found"
+          exit 1
+        fi
+        
+        if [ ! -f "dist/dzmitry_kalianchuk_cv.pdf" ]; then
+          echo "❌ Error: dzmitry_kalianchuk_cv.pdf not found"
+          exit 1
+        fi
+        
+        echo "✅ Both HTML and PDF files generated successfully"
+        
+    - name: Get file sizes and info
+      run: |
+        echo "Generated files:"
+        echo "HTML: $(ls -lh dist/cv.html | awk '{print $5}')"
+        echo "PDF: $(ls -lh dist/dzmitry_kalianchuk_cv.pdf | awk '{print $5}')"
+        
+    - name: Prepare release assets
+      run: |
+        # Create a release directory
+        mkdir -p release
+        
+        # Copy files with descriptive names
+        cp dist/cv.html "release/CV-$(date +%Y%m%d).html"
+        cp dist/dzmitry_kalianchuk_cv.pdf "release/CV-$(date +%Y%m%d).pdf"
+        
+        # Also keep original names for consistency
+        cp dist/cv.html release/
+        cp dist/dzmitry_kalianchuk_cv.pdf release/cv.pdf
+        cp dist/dzmitry_kalianchuk_cv.pdf release/dzmitry_kalianchuk_cv.pdf
+        
+        echo "Release assets prepared:"
+        ls -la release/
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-files
+        path: |
+          release/
+          dist/
+        retention-days: 30
+        
+    - name: Determine release info
+      id: release_info
+      run: |
+        # Set release name
+        if [ "${{ github.event.inputs.release_name }}" != "" ]; then
+          RELEASE_NAME="${{ github.event.inputs.release_name }}"
+        elif [ "${{ github.ref_type }}" == "tag" ]; then
+          RELEASE_NAME="${{ github.ref_name }}"
+        else
+          RELEASE_NAME="CV Release $(date +%Y-%m-%d)"
+        fi
+        
+        echo "release_name=$RELEASE_NAME" >> $GITHUB_OUTPUT
+        
+        # Set tag name (create one if triggered manually)
+        if [ "${{ github.ref_type }}" == "tag" ]; then
+          TAG_NAME="${{ github.ref_name }}"
+        else
+          TAG_NAME="cv-$(date +%Y%m%d-%H%M%S)"
+        fi
+        
+        echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+        
+        # Set prerelease flag
+        PRERELEASE="false"
+        if [ "${{ github.event.inputs.prerelease }}" == "true" ]; then
+          PRERELEASE="true"
+        fi
+        
+        echo "prerelease=$PRERELEASE" >> $GITHUB_OUTPUT
+        
+        echo "Release will be created with:"
+        echo "  Name: $RELEASE_NAME"
+        echo "  Tag: $TAG_NAME" 
+        echo "  Prerelease: $PRERELEASE"
+        
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.release_info.outputs.tag_name }}
+        release_name: ${{ steps.release_info.outputs.release_name }}
+        draft: false
+        prerelease: ${{ steps.release_info.outputs.prerelease }}
+        body: |
+          CV generated on: $(date +"%Y-%m-%d %H:%M:%S UTC")
+          
+    - name: Upload PDF Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/dzmitry_kalianchuk_cv.pdf
+        asset_name: dzmitry_kalianchuk_cv.pdf
+        asset_content_type: application/pdf
+        
+    - name: Display release info
+      run: |
+        echo "🎉 Release created successfully!"
+        echo "📎 Release URL: ${{ steps.create_release.outputs.html_url }}"
+        echo "🔗 You can download the CV from the release page"
+        echo ""
+        echo "📁 Direct download link:"
+        echo "  PDF: ${{ steps.create_release.outputs.html_url }}/download/dzmitry_kalianchuk_cv.pdf"
