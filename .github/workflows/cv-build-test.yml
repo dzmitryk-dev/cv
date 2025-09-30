@@ -4,22 +4,10 @@ on:
   # Trigger on pull requests
   pull_request:
     branches: [ main, master ]
-    paths:
-      - 'content/**'
-      - 'template/**'
-      - 'pdf/**'
-      - 'build_html.sh'
-      - 'Makefile'
 
   # Trigger on pushes to main/master (without creating release)
   push:
     branches: [ main, master ]
-    paths:
-      - 'content/**'
-      - 'template/**'
-      - 'pdf/**'
-      - 'build_html.sh'
-      - 'Makefile'
 
 jobs:
   test-build:
