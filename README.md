@@ -1,48 +1,194 @@
-# CV Template - Pandoc HTML Template
+# CV Generator
 
-A modern HTML CV template with VS Code dark theme styling that converts Markdown to professional-looking HTML CVs.
+A modern, modular CV generation system that creates professional HTML and PDF CVs from structured Markdown and YAML content. Features a VS Code dark theme aesthetic with print-optimized styling.
 
-## Quick Start
+## Project Structure
 
-1. Install Pandoc:
-   ```bash
-   # macOS
-   brew install pandoc
-   
-   # Ubuntu/Debian
-   sudo apt install pandoc
-   
-   # Windows (with Chocolatey)
-   choco install pandoc
-   ```
+```
+cv/
+├── build_html.sh          # Script to generate HTML CV from content files
+├── Makefile               # Build targets for HTML, PDF, Docker image, and cleanup
+├── README.md              # This documentation
+├── content/               # CV content files
+│   ├── meta.yml           # Basic metadata (title, avatar path)
+│   ├── contacts.yml       # Personal information (name, role, location, contacts)
+│   ├── skills.yml         # Skills organized in categories
+│   ├── summary.md         # Professional summary
+│   ├── achievements.md    # Key achievements and highlights
+│   ├── experience.md      # Work experience history
+│   ├── education.md       # Education background
+│   ├── languages.md       # Language proficiencies
+│   └── avatar.webp        # Profile picture
+├── docker/                # Docker setup for containerized generation
+│   ├── Dockerfile         # Docker image definition
+│   └── scripts/
+│       ├── build.sh       # Build Docker image
+│       └── generate.sh    # Generate CV using Docker
+├── pdf/                   # PDF generation tools
+│   └── generate-pdf.js    # Node.js script using Puppeteer for PDF creation
+└── template/              # HTML template and styling
+    ├── cv.html            # Pandoc HTML template
+    └── style.css          # CSS styles (screen + print media queries)
+```
 
-2. Generate your CV:
-   ```bash
-   pandoc cv.md --from=markdown-autolink_bare_uris --template=template/cv.html --standalone --output=dist/cv.html
-   ```
+## CV Content Structure
 
-3. Open `dist/cv.html` in Chrome/Firefox to preview
+The CV content is organized into modular files for easy maintenance and updates:
 
-4. Use Chrome's Print Preview (Ctrl+P) to see A4 PDF layout
+### Core Metadata Files (YAML)
+
+- **`meta.yml`**: Contains basic page metadata
+  - `title`: Browser tab title
+  - `avatar`: Path to profile image
+- **`contacts.yml`**: Personal and contact information
+  - `name`: Full name
+  - `role`: Professional title
+  - `location`: City and country
+  - `email`, `phone`: Contact details
+  - `github`, `linkedin`: Professional profiles (without https://)
+- **`skills.yml`**: Technical and professional skills organized in categories
+  - Structured as `skill_categories` with `name` and `items` arrays
+
+### Content Sections (Markdown)
+
+- **`summary.md`**: Brief professional summary (plain text)
+- **`achievements.md`**: Key accomplishments and highlights (Markdown formatted)
+- **`experience.md`**: Work experience with job titles, companies, dates, and descriptions (Markdown formatted)
+- **`education.md`**: Educational background and qualifications (Markdown formatted)
+- **`languages.md`**: Language proficiencies and levels (Markdown formatted)
+
+### Assets
+
+- **`avatar.webp`**: Profile picture (WebP format recommended for smaller file size)
+
+## How to Generate CV
+
+### Prerequisites
+
+#### For HTML Generation
+
+- **Pandoc**: Required for converting Markdown to HTML
+
+  ```bash
+  # macOS
+  brew install pandoc
+
+  # Ubuntu/Debian
+  sudo apt install pandoc
+
+  # Windows (with Chocolatey)
+  choco install pandoc
+  ```
+
+#### For PDF Generation (Local)
+
+- **Node.js** (v14+): Required for PDF generation
+- **Puppeteer**: Install dependencies
+
+  ```bash
+  npm install puppeteer
+  ```
+
+#### For PDF Generation (Docker - Recommended)
+
+- **Docker**: For containerized PDF generation (includes all dependencies)
+
+### Generate HTML CV
+
+#### Option 1: Direct script execution
+
+```bash
+./build_html.sh
+```
+
+- Generates `dist/cv.html` with current date
+- Optional: Add `--open` flag to automatically open in browser
+
+#### Option 2: Using Makefile
+
+```bash
+make html
+```
+
+### Generate PDF CV
+
+#### Option 1: Using Docker (Recommended)
+
+```bash
+# Build Docker image (one-time setup)
+make image
+
+# Generate both HTML and PDF
+make pdf
+```
+
+#### Option 2: Local generation
+
+```bash
+# First generate HTML
+./build_html.sh
+
+# Then generate PDF
+node pdf/generate-pdf.js
+```
+
+### Preview and Print
+
+- **Web preview**: Open `dist/cv.html` in any modern browser
+- **Print preview**: Use browser's print function (Ctrl+P/Cmd+P) for A4 PDF layout
+- **Direct PDF**: Generated files are saved in `dist/` directory## Maintenance Guide
+
+### Updating Content
+
+1. **Personal Information**: Edit `content/contacts.yml`
+2. **Skills**: Modify `content/skills.yml` (add/remove categories or items)
+3. **Professional Summary**: Update `content/summary.md`
+4. **Experience**: Edit `content/experience.md` with new positions or updates
+5. **Education**: Modify `content/education.md`
+6. **Achievements**: Update `content/achievements.md`
+7. **Languages**: Edit `content/languages.md`
+8. **Profile Picture**: Replace `content/avatar.webp`
+
+### File Organization Best Practices
+
+- Keep content files focused on their specific sections
+- Use Markdown formatting for rich text in experience, education, and achievements
+- Maintain consistent date formats (e.g., "2020 - Present" or "2018 - 2022")
+- Update the generation date automatically via build scripts
+
+### Build System
+
+- **HTML Generation**: Uses Pandoc with custom template and variable injection
+- **PDF Generation**: Leverages Puppeteer for headless Chrome rendering with background preservation
+- **Docker**: Provides consistent environment across different systems
+- **Makefile**: Offers convenient targets for common operations
+
+### Dependencies
+
+- **Runtime**: Pandoc for HTML, Node.js/Puppeteer for PDF
+- **Development**: Docker for containerized builds
+- **Assets**: WebP images for optimized file sizes
+
+### Troubleshooting
+
+- **HTML generation fails**: Ensure Pandoc is installed and all content files exist
+- **PDF generation fails**: Check Node.js version and Puppeteer installation
+- **Docker issues**: Verify Docker is running and image is built
+- **Styling issues**: Check browser compatibility and print CSS
+
+### Version Control
+
+- Commit content changes separately from build artifacts
+- The `dist/` folder is typically gitignored (generated files)
+- Keep template and build scripts under version control
 
 ## Features
 
-- **VS Code themed design**: Dark theme for screen, professional for print
-- **Print optimized**: A4 format with proper margins
-- **Responsive layout**: Works on desktop and mobile  
-- **Line numbering**: Static line numbers (1-100) provide VS Code editor aesthetic
+- **Modular Content**: Separate files for easy maintenance and updates
+- **VS Code Theme**: Dark theme for screen, professional for print
+- **Responsive Design**: Works on desktop and mobile devices
+- **Print Optimized**: A4 format with proper margins and print-friendly styling
+- **Automated Builds**: Scripts and Makefile for consistent generation
+- **Docker Support**: Containerized PDF generation for reproducibility
+- **Background Preservation**: PDF generation maintains all visual styling
 - **Semantic HTML**: Proper HTML5 structure for accessibility
-
-## Template Structure
-
-```
-├─ template/
-│  ├─ cv.html          # Pandoc template file
-│  └─ style.css        # Styles (screen + print media queries)
-├─ cv.md               # Your CV content with YAML front-matter
-├─ dist/               # Generated output
-├─ TEMPLATE_NOTES.md   # Detailed usage guide
-└─ README.md           # This file
-```
-
-See `TEMPLATE_NOTES.md` for detailed usage instructions and YAML configuration options. 
