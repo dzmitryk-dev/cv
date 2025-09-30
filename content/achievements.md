@@ -1,0 +1,3 @@
+- Transformed legacy codebases by modularizing monolithic apps into scalable multi-module architectures, enabling faster parallel development and easier adaptation for new markets.
+- Improved delivery speed and reliability by streamlining CI/CD pipelines and build systems, ensuring smooth and predictable production releases.
+- Contributed to organizational growth by mentoring engineers, leading technical interviews, chairing promotion assessments, and sharing knowledge in company-wide meetups.

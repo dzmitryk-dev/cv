@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$title$</title>
+    <link rel="stylesheet" href="../template/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-row">
+            <!-- Left info panel with personal details -->
+            <header class="info-panel">
+                <img src="../$avatar$" alt="$name$" class="profile-photo">
+                <h2>$name$</h2>
+                <p class="position">$role$</p>
+                <p class="location">$location$</p>
+                <hr>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br> <a href="mailto:$email$" class="email-link">$email$</a></p>
+                    <p>📞 <strong>Phone:</strong><br> $phone$</p>
+                    <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong><br> <a href="https://$linkedin$" target="_blank" rel="noopener">$linkedin$</a></p>
+                    <p><i class="fab fa-github"></i> <strong>GitHub:</strong><br> <a href="https://$github$" target="_blank" rel="noopener">$github$</a></p>
+                </div>
+            </header>
+
+            <!-- Main content area -->
+            <main class="editor-panel">
+                <div class="line-numbers" aria-hidden="true"></div>
+                <div class="cv-content">
+                    <!-- Summary -->
+                    <h2 class="heading">Summary</h2>
+                    <p>$summary$</p>
+                    
+                    <!-- Skills section -->
+                    <section class="skills-section">
+                        <h2 class="heading">Skills</h2>
+                        $for(skill_categories)$
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">$skill_categories.name$</h3>
+                            <div class="skills-container">
+                                $for(skill_categories.items)$<span class="skill-tag">$skill_categories.items$</span>$endfor$
+                            </div>
+                        </div>
+                        $endfor$
+                    </section>
+                    
+                    <!-- Key Achievements -->
+                    <h2 class="heading">Key Achievements</h2>
+                    $achievements$
+                    
+                    <!-- Work Experience -->
+                    <h2 class="heading">Work Experience</h2>
+                    $experience$
+                    
+                    <!-- Education -->
+                    <h2 class="heading">Education</h2>
+                    $education$
+                    
+                    <!-- Languages -->
+                    <h2 class="heading">Languages</h2>
+                    $languages$
+                </div>
+            </main>
+        </div>
+        
+        <!-- Footer with last updated date -->
+        <footer class="cv-footer">
+            <p class="last-updated">Last updated: $date$</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentElement = document.querySelector('.cv-content');
+            const lineNumbersElement = document.querySelector('.line-numbers');
+            
+            if (contentElement && lineNumbersElement) {
+                function generateLineNumbers() {
+                    const computedStyle = window.getComputedStyle(contentElement);
+                    const lineHeight = parseFloat(computedStyle.lineHeight);
+                    
+                    // Use cv-content height instead of editor panel to match content
+                    const contentHeight = contentElement.clientHeight;
+                    const lineNumbersPadding = 30; // 15px top + 15px bottom
+                    const availableHeight = contentHeight - lineNumbersPadding;
+                    const numLines = Math.ceil(availableHeight / lineHeight) + 2; // Add small buffer
+
+                    lineNumbersElement.innerHTML = '';
+
+                    for (let i = 1; i <= numLines; i++) {
+                        const span = document.createElement('span');
+                        span.textContent = i;
+                        lineNumbersElement.appendChild(span);
+                    }
+                }
+
+                // Generate line numbers after content is loaded and rendered
+                setTimeout(generateLineNumbers, 100);
+                
+                // Also regenerate on window resize
+                window.addEventListener('resize', generateLineNumbers);
+            }
+        });
+    </script>
+
+</body>
+</html>

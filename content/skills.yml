@@ -1,0 +1,45 @@
+---
+skill_categories:
+  - name: "Programming Languages"
+    items:
+      - "Kotlin"
+      - "Java"
+      - "Python"
+  - name: "Mobile Development"
+    items:
+      - "Android SDK"
+      - "Jetpack Compose"
+      - "Jetpack Architecture Components"
+      - "Coroutines"
+      - "Flow"
+      - "RxJava"
+      - "Dagger/Hilt"
+      - "Retrofit"
+      - "Espresso"
+      - "JUnit"
+  - name: "Architecture & Practices"
+    items:
+      - "Clean Architecture"
+      - "MVVM"
+      - "MVI"
+      - "Modularization"
+      - "Unit Testing"
+      - "UI Testing"
+      - "Extreme Programming"
+      - "Agile/Scrum"
+  - name: "Tools & Platforms"
+    items:
+      - "Gradle"
+      - "GitHub Actions"
+      - "GitLab CI"
+      - "CI/CD Pipelines"
+      - "SonarQube"
+      - "Docker"
+  - name: "Leadership & Collaboration"
+    items:
+      - "Team Leadership"
+      - "Mentoring"
+      - "Technical Interviewing"
+      - "Release Management"
+      - "Onboarding"
+---
