@@ -136,7 +136,36 @@ node pdf/generate-pdf.js
 
 - **Web preview**: Open `dist/cv.html` in any modern browser
 - **Print preview**: Use browser's print function (Ctrl+P/Cmd+P) for A4 PDF layout
-- **Direct PDF**: Generated files are saved in `dist/` directory## Maintenance Guide
+- **Direct PDF**: Generated files are saved in `dist/` directory
+
+## GitHub Actions Automation
+
+This repository includes automated CV generation and release publishing using GitHub Actions.
+
+### Creating Releases
+
+**Method 1: Git Tags (Recommended)**
+```bash
+git tag v1.0
+git push origin v1.0
+```
+
+**Method 2: Manual Trigger**
+1. Go to **Actions** tab in your repository
+2. Select "Generate CV and Create Release"
+3. Click "Run workflow"
+
+### What You Get
+
+- **Automatic PDF generation** using your Docker setup
+- **GitHub release** with downloadable `dzmitry_kalianchuk_cv.pdf`
+- **Direct download link**: `https://github.com/USER/REPO/releases/latest/download/dzmitry_kalianchuk_cv.pdf`
+
+### Testing
+
+- **Pull requests** automatically test CV generation
+- **All pushes** to main/master trigger build validation
+- **Build artifacts** available for download from Actions tab## Maintenance Guide
 
 ### Updating Content
 
