@@ -30,8 +30,8 @@ async function generatePDF() {
         const page = await browser.newPage();
 
         // Path to the generated HTML file
-        const htmlPath = path.join(__dirname, 'dist', 'cv.html');
-        const outputPath = path.join(__dirname, 'dist', 'cv.pdf');
+        const htmlPath = path.join(__dirname, '..', 'dist', 'cv.html');
+        const outputPath = path.join(__dirname, '..', 'dist', 'cv.pdf');
 
         // Check if HTML file exists
         if (!fs.existsSync(htmlPath)) {

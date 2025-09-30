@@ -22,14 +22,17 @@ docker run --rm \
     cp /workspace/*.webp /app/ 2>/dev/null || true
     cp -r /workspace/template /app/ 2>/dev/null || true
     
-    # Use the build.sh from the image, but copy the build.sh from workspace if it exists
-    if [ -f '/workspace/build.sh' ]; then
-      cp /workspace/build.sh /app/
-      chmod +x /app/build.sh
+    # Use the build_html.sh from the image, but copy the build_html.sh from workspace if it exists
+    if [ -f '/workspace/build_html.sh' ]; then
+      cp /workspace/build_html.sh /app/
+      chmod +x /app/build_html.sh
     fi
     
     # Run the build script
-    /app/build.sh
+    /app/build_html.sh
+    
+    # Generate PDF
+    node pdf/generate-pdf.js
   "
 
 echo "✅ CV generation completed!"

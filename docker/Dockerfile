@@ -38,7 +38,7 @@ COPY . .
 RUN mkdir -p dist
 
 # Make build script executable
-RUN chmod +x build.sh
+RUN chmod +x build_html.sh
 
 # Stay as root for simplicity (can be changed later for security)
 
@@ -49,7 +49,7 @@ RUN chmod +x build.sh
 ENTRYPOINT []
 
 # Default command - build the CV
-CMD ["./build.sh"]
+CMD ["./build_html.sh"]
 
 # Add labels for metadata
 LABEL maintainer="Dzmitry Kalianchuk"

@@ -8,7 +8,7 @@ set -e
 echo "🐳 Building CV Generator Docker image..."
 
 # Build the Docker image
-docker build -t cv-generator:latest .
+docker build -t cv-generator:latest -f docker/Dockerfile .
 
 echo "✅ Docker image built successfully!"
 echo ""
