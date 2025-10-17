@@ -1,0 +1,7 @@
+- Own and develop new app features.
+- Own the existing codebase; manage technical debt and build scripts/infrastructure.
+- Drive best engineering practices within the team.
+- Collaborate with stakeholders; translate between technical and non-technical language for cross-team alignment.
+- Interview new team members (project/company).
+- Assess employees’ readiness for promotion.
+- Posting memes in the team chat.
