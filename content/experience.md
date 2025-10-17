@@ -10,7 +10,7 @@
 
 ### Software Engineer @ EPAM Systems, *2015 - 2017*
 
-- Key Developer on a communication platform, responsible for delivering new features, maintaining the existing codebase, and improving overall system stability.
+- Key Developer on a communication platform app, responsible for delivering new features, maintaining the existing codebase, and improving overall system stability.
 
 ### Software Engineer @ Cactus Soft, *2013 - 2014*
 
