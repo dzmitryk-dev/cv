@@ -15,6 +15,8 @@ cv/
 │   ├── skills.yml         # Skills organized in categories
 │   ├── summary.md         # Professional summary
 │   ├── achievements.md    # Key achievements and highlights
+│   ├── responsibilities.md # Professional responsibilities and duties
+│   ├── strengths.md       # Core professional strengths and capabilities
 │   ├── experience.md      # Work experience history
 │   ├── education.md       # Education background
 │   ├── languages.md       # Language proficiencies
@@ -53,6 +55,8 @@ The CV content is organized into modular files for easy maintenance and updates:
 
 - **`summary.md`**: Brief professional summary (plain text)
 - **`achievements.md`**: Key accomplishments and highlights (Markdown formatted)
+- **`responsibilities.md`**: Key professional responsibilities and duties (Markdown formatted)
+- **`strengths.md`**: Core professional strengths and capabilities (Markdown formatted)
 - **`experience.md`**: Work experience with job titles, companies, dates, and descriptions (Markdown formatted)
 - **`education.md`**: Educational background and qualifications (Markdown formatted)
 - **`languages.md`**: Language proficiencies and levels (Markdown formatted)
@@ -172,11 +176,13 @@ git push origin v1.0
 1. **Personal Information**: Edit `content/contacts.yml`
 2. **Skills**: Modify `content/skills.yml` (add/remove categories or items)
 3. **Professional Summary**: Update `content/summary.md`
-4. **Experience**: Edit `content/experience.md` with new positions or updates
-5. **Education**: Modify `content/education.md`
-6. **Achievements**: Update `content/achievements.md`
-7. **Languages**: Edit `content/languages.md`
-8. **Profile Picture**: Replace `content/avatar.webp`
+4. **Achievements**: Update `content/achievements.md`
+5. **Responsibilities**: Edit `content/responsibilities.md`
+6. **Strengths**: Modify `content/strengths.md`
+7. **Experience**: Edit `content/experience.md` with new positions or updates
+8. **Education**: Modify `content/education.md`
+9. **Languages**: Edit `content/languages.md`
+10. **Profile Picture**: Replace `content/avatar.webp`
 
 ### File Organization Best Practices
 

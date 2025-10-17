@@ -1,0 +1,5 @@
+- Open-minded.
+- Unafraid of legacy/large codebases.
+- Ready to invest time and energy into project development.
+- Willing to accept challenges and go beyond boundaries.
+- Long-term team player.
