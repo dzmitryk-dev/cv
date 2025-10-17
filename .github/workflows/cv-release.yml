@@ -127,10 +127,15 @@ jobs:
         
         echo "prerelease=$PRERELEASE" >> $GITHUB_OUTPUT
         
+        # Generate the current date for release body
+        GENERATION_DATE=$(date +"%Y-%m-%d %H:%M:%S UTC")
+        echo "generation_date=$GENERATION_DATE" >> $GITHUB_OUTPUT
+        
         echo "Release will be created with:"
         echo "  Name: $RELEASE_NAME"
         echo "  Tag: $TAG_NAME" 
         echo "  Prerelease: $PRERELEASE"
+        echo "  Generated: $GENERATION_DATE"
         
     - name: Create Release
       id: create_release
@@ -143,7 +148,7 @@ jobs:
         draft: false
         prerelease: ${{ steps.release_info.outputs.prerelease }}
         body: |
-          CV generated on: $(date +"%Y-%m-%d %H:%M:%S UTC")
+          CV generated on: ${{ steps.release_info.outputs.generation_date }}
           
     - name: Upload PDF Release Asset
       uses: actions/upload-release-asset@v1
